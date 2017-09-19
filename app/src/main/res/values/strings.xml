@@ -1,10 +1,29 @@
 <resources>
     <string name="app_name">Dice</string>
+    <!--Strings for labels on the buttons for the fragment_start.xml-->
     <string name="new_game">New Game</string>
     <string name="load_game">Load Game</string>
     <string name="high_scores">High Scores</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Strings for labels in the fragment_game.xml-->
+    <string name="ones">Ones</string>
+    <string name="twos">Twos</string>
+    <string name="threes">Threes</string>
+    <string name="fours">Fours</string>
+    <string name="fives">Fives</string>
+    <string name="sixes">Sixes</string>
+    <string name="threekind">3 of a kind</string>
+    <string name="fourkind">4 of a kind</string>
+    <string name="smstraight">Small straight</string>
+    <string name="lgstraight">Large straight</string>
+    <string name="fullhouse">Full House</string>
+    <string name="chance">Chance</string>
+    <string name="fivekind">5 of a kind</string>
+    <string name="start">0</string>
+    <string name="empty"> </string>
+
 
 </resources>
