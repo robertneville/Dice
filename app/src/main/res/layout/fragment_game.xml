@@ -438,14 +438,14 @@
             android:background="#ffffff"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 style="@style/gameScoreButtons"
                 android:id="@+id/gameDiceKeep1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/fourkind"
+                android:src="@mipmap/greendice1"
                 android:enabled="false"/>
         </LinearLayout>
 
@@ -456,14 +456,14 @@
             android:background="#ffff00"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 style="@style/gameScoreButtons"
                 android:id="@+id/gameDiceKeep2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/fourkind"
+                android:src="@mipmap/greendice2"
                 android:enabled="false"/>
         </LinearLayout>
 
@@ -474,14 +474,14 @@
             android:background="#ffaaff"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 style="@style/gameScoreButtons"
                 android:id="@+id/gameDiceKeep3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/fourkind"
+                android:src="@mipmap/greendice3"
                 android:enabled="false"/>
         </LinearLayout>
 
@@ -492,14 +492,14 @@
             android:background="#ffffaa"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 style="@style/gameScoreButtons"
                 android:id="@+id/gameDiceKeep4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/fourkind"
+                android:src="@mipmap/greendice4"
                 android:enabled="false"/>
         </LinearLayout>
 
@@ -510,14 +510,14 @@
             android:background="#aaaaff"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 style="@style/gameScoreButtons"
                 android:id="@+id/gameDiceKeep5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/fourkind"
+                android:src="@mipmap/greendice5"
                 android:enabled="false"/>
         </LinearLayout>
 
@@ -539,14 +539,13 @@
             android:background="#aaaaff"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 style="@style/gameScoreButtons"
                 android:id="@+id/gameDiceRoll1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="@string/fourkind"
+                android:src="@mipmap/whitedice1"
                 android:enabled="false"/>
         </LinearLayout>
 
@@ -557,14 +556,13 @@
             android:background="#ffffaa"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 style="@style/gameScoreButtons"
                 android:id="@+id/gameDiceRoll2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="@string/fourkind"
+                android:src="@mipmap/whitedice2"
                 android:enabled="false"/>
         </LinearLayout>
 
@@ -575,14 +573,13 @@
             android:background="#aaffaa"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 style="@style/gameScoreButtons"
                 android:id="@+id/gameDiceRoll3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="@string/fourkind"
+                android:src="@mipmap/whitedice3"
                 android:enabled="false"/>
         </LinearLayout>
 
@@ -593,14 +590,13 @@
             android:background="#ffff00"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 style="@style/gameScoreButtons"
                 android:id="@+id/gameDiceRoll4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="@string/fourkind"
+                android:src="@mipmap/whitedice4"
                 android:enabled="false"/>
         </LinearLayout>
 
@@ -611,14 +607,13 @@
             android:background="#ffffff"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 style="@style/gameScoreButtons"
                 android:id="@+id/gameDiceRoll5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="@string/fourkind"
+                android:src="@mipmap/whitedice5"
                 android:enabled="false"/>
         </LinearLayout>
 

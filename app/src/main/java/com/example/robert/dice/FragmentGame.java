@@ -279,7 +279,7 @@ public class FragmentGame extends Fragment {
         {
             @Override
             public void onClick(View v) {
-                StartRoll(); 
+                StartRoll();
             }
         });
     }
