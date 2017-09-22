@@ -23,7 +23,7 @@ public class FragmentGame extends Fragment {
     //cup to roll
     ImageButton mCup;
     //dice
-    Button mDice1Keep, mDice2Keep, mDice3Keep, mDice4Keep, mDice5Keep, mDice1Roll, mDice2Roll,
+    ImageButton mDice1Keep, mDice2Keep, mDice3Keep, mDice4Keep, mDice5Keep, mDice1Roll, mDice2Roll,
             mDice3Roll, mDice4Roll, mDice5Roll;
 
     public FragmentGame() {
@@ -193,7 +193,8 @@ public class FragmentGame extends Fragment {
      */
     private void InstantiateButtons(View view) {
 
-        mDice1Keep = (Button)view.findViewById(R.id.gameDiceKeep1);
+        mDice1Keep = (ImageButton)view.findViewById(R.id.gameDiceKeep1);
+        mDice1Keep.setEnabled(false);
         mDice1Keep.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -201,7 +202,8 @@ public class FragmentGame extends Fragment {
                 Toast.makeText(getActivity(),"Pressed Keep 1 Dice", Toast.LENGTH_SHORT).show();
             }
         });
-        mDice2Keep = (Button)view.findViewById(R.id.gameDiceKeep2);
+        mDice2Keep = (ImageButton)view.findViewById(R.id.gameDiceKeep2);
+        mDice2Keep.setEnabled(false);
         mDice2Keep.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -209,7 +211,8 @@ public class FragmentGame extends Fragment {
                 Toast.makeText(getActivity(),"Pressed Keep 2 Dice", Toast.LENGTH_SHORT).show();
             }
         });
-        mDice3Keep = (Button)view.findViewById(R.id.gameDiceKeep3);
+        mDice3Keep = (ImageButton)view.findViewById(R.id.gameDiceKeep3);
+        mDice3Keep.setEnabled(false);
         mDice3Keep.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -217,7 +220,8 @@ public class FragmentGame extends Fragment {
                 Toast.makeText(getActivity(),"Pressed Keep 3 Dice", Toast.LENGTH_SHORT).show();
             }
         });
-        mDice4Keep = (Button)view.findViewById(R.id.gameDiceKeep4);
+        mDice4Keep = (ImageButton)view.findViewById(R.id.gameDiceKeep4);
+        mDice4Keep.setEnabled(false);
         mDice4Keep.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -225,7 +229,8 @@ public class FragmentGame extends Fragment {
                 Toast.makeText(getActivity(),"Pressed Keep 4 Dice", Toast.LENGTH_SHORT).show();
             }
         });
-        mDice5Keep = (Button)view.findViewById(R.id.gameDiceKeep5);
+        mDice5Keep = (ImageButton)view.findViewById(R.id.gameDiceKeep5);
+        mDice5Keep.setEnabled(false);
         mDice5Keep.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -233,7 +238,8 @@ public class FragmentGame extends Fragment {
                 Toast.makeText(getActivity(),"Pressed Keep 5 Dice", Toast.LENGTH_SHORT).show();
             }
         });
-        mDice1Roll = (Button)view.findViewById(R.id.gameDiceRoll1);
+        mDice1Roll = (ImageButton)view.findViewById(R.id.gameDiceRoll1);
+        mDice1Roll.setEnabled(false);
         mDice1Roll.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -241,7 +247,8 @@ public class FragmentGame extends Fragment {
                 Toast.makeText(getActivity(),"Pressed Roll 1 Dice", Toast.LENGTH_SHORT).show();
             }
         });
-        mDice2Roll = (Button)view.findViewById(R.id.gameDiceRoll2);
+        mDice2Roll = (ImageButton)view.findViewById(R.id.gameDiceRoll2);
+        mDice2Roll.setEnabled(false);
         mDice2Roll.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -249,7 +256,8 @@ public class FragmentGame extends Fragment {
                 Toast.makeText(getActivity(),"Pressed Roll 2 Dice", Toast.LENGTH_SHORT).show();
             }
         });
-        mDice3Roll = (Button)view.findViewById(R.id.gameDiceRoll3);
+        mDice3Roll = (ImageButton)view.findViewById(R.id.gameDiceRoll3);
+        mDice3Roll.setEnabled(false);
         mDice3Roll.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -258,7 +266,8 @@ public class FragmentGame extends Fragment {
             }
         });
 
-        mDice4Roll = (Button)view.findViewById(R.id.gameDiceRoll4);
+        mDice4Roll = (ImageButton)view.findViewById(R.id.gameDiceRoll4);
+        mDice4Roll.setEnabled(false);
         mDice4Roll.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -266,7 +275,8 @@ public class FragmentGame extends Fragment {
                 Toast.makeText(getActivity(),"Pressed Roll 4 Dice", Toast.LENGTH_SHORT).show();
             }
         });
-        mDice5Roll = (Button)view.findViewById(R.id.gameDiceRoll5);
+        mDice5Roll = (ImageButton)view.findViewById(R.id.gameDiceRoll5);
+        mDice5Roll.setEnabled(false);
         mDice5Roll.setOnClickListener(new View.OnClickListener()
         {
             @Override
