@@ -27,20 +27,22 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
+                    style="@style/gameScoreButtons"
                     android:id="@+id/label_score_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="@string/ones" />
+                    android:text="@string/ones"
+                    android:enabled="false"/>
 
                 <TextView
                     android:id="@+id/score_score_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="@string/start" />
 
             </LinearLayout>
@@ -52,20 +54,22 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
+                    style="@style/gameScoreButtons"
                     android:id="@+id/label_score_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="@string/twos" />
+                    android:text="@string/twos"
+                    android:enabled="false"/>
 
                 <TextView
                     android:id="@+id/score_score_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="@string/start" />
 
             </LinearLayout>
@@ -77,20 +81,22 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
+                    style="@style/gameScoreButtons"
                     android:id="@+id/label_score_3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="@string/threes" />
+                    android:text="@string/threes"
+                    android:enabled="false"/>
 
                 <TextView
                     android:id="@+id/score_score_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="@string/start" />
 
             </LinearLayout>
@@ -102,20 +108,22 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
+                    style="@style/gameScoreButtons"
                     android:id="@+id/label_score_4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="@string/fours" />
+                    android:text="@string/fours"
+                    android:enabled="false"/>
 
                 <TextView
                     android:id="@+id/score_score_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="@string/start" />
 
             </LinearLayout>
@@ -127,20 +135,22 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
+                    style="@style/gameScoreButtons"
                     android:id="@+id/label_score_5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="@string/fives" />
+                    android:text="@string/fives"
+                    android:enabled="false"/>
 
                 <TextView
                     android:id="@+id/score_score_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="@string/start" />
 
             </LinearLayout>
@@ -152,20 +162,22 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
+                    style="@style/gameScoreButtons"
                     android:id="@+id/label_score_6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="@string/sixes" />
+                    android:text="@string/sixes"
+                    android:enabled="false"/>
 
                 <TextView
                     android:id="@+id/score_score_6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="@string/start" />
 
             </LinearLayout>
@@ -191,20 +203,22 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <Button
+                        style="@style/gameScoreButtons"
                         android:id="@+id/label_score_3kind"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:text="@string/threekind" />
+                        android:text="@string/threekind"
+                        android:enabled="false"/>
 
                     <TextView
                         android:id="@+id/score_score_3kind"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:gravity="center_vertical"
+                        android:gravity="center"
                         android:text="@string/start" />
 
                 </LinearLayout>
@@ -216,45 +230,50 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <Button
+                        style="@style/gameScoreButtons"
                         android:id="@+id/label_score_4kind"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:text="@string/fourkind" />
+                        android:text="@string/fourkind"
+                        android:enabled="false"/>
 
                     <TextView
                         android:id="@+id/score_score_4kind"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:gravity="center_vertical"
+                        android:gravity="center"
                         android:text="@string/start" />
 
                 </LinearLayout>
 
                 <LinearLayout
+
                     android:id="@+id/layout_score_fullhose"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <Button
+                        style="@style/gameScoreButtons"
                         android:id="@+id/label_score_smstraight"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:text="@string/smstraight" />
+                        android:gravity="center"
+                        android:text="@string/smstraight"
+                        android:enabled="false"/>
 
                     <TextView
                         android:id="@+id/score_score_smstraight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:gravity="center_vertical"
+                        android:gravity="center"
                         android:text="@string/start" />
 
                 </LinearLayout>
@@ -266,20 +285,22 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <Button
+                        style="@style/gameScoreButtons"
                         android:id="@+id/label_score_lgstraight"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:text="@string/lgstraight" />
+                        android:text="@string/lgstraight"
+                        android:enabled="false"/>
 
                     <TextView
                         android:id="@+id/score_score_lgstraight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:gravity="center_vertical"
+                        android:gravity="center"
                         android:text="@string/start" />
 
                 </LinearLayout>
@@ -291,21 +312,24 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <Button
+                        style="@style/gameScoreButtons"
                         android:id="@+id/label_score_fullhouse"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:text="@string/fullhouse" />
+                        android:text="@string/fullhouse"
+                        android:enabled="false"/>
 
                     <TextView
                         android:id="@+id/score_score_fullhuose"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:gravity="center_vertical"
-                        android:text="@string/start" />
+                        android:gravity="center"
+                        android:text="@string/start"
+                        android:enabled="false"/>
 
                 </LinearLayout>
 
@@ -316,20 +340,22 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <Button
+                        style="@style/gameScoreButtons"
                         android:id="@+id/label_score_chance"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:text="@string/chance" />
+                        android:text="@string/chance"
+                        android:enabled="false"/>
 
                     <TextView
                         android:id="@+id/score_score_chance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:gravity="center_vertical"
+                        android:gravity="center"
                         android:text="@string/start" />
 
                 </LinearLayout>
@@ -347,150 +373,53 @@
                 android:id="@+id/layout_score_5kind"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="7"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
+                    style="@style/gameScoreButtons"
                     android:id="@+id/label_score_5kind"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="@string/fivekind" />
+                    android:text="@string/fivekind"
+                    android:enabled="false"/>
 
                 <TextView
                     android:id="@+id/score_score_5kind"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="@string/start" />
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/layout_empty1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/label_empty_1"
+                <ImageButton
+                    android:id="@+id/game_cup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
                     android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/empty" />
+                    android:background="@drawable/button_game"
+                    android:elevation="10dp"
+                    android:gravity="center"
+                    android:src="@android:drawable/dialog_frame"
+                    android:text="@string/start" />
 
-                <TextView
-                    android:id="@+id/score_empty_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center_vertical"
-                    android:text="@string/empty" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
-            <LinearLayout
-                android:id="@+id/layout_score_empty2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/label_empty_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/empty" />
-
-                <TextView
-                    android:id="@+id/score_empty_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center_vertical"
-                    android:text="@string/empty" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_score_empty3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/label_empty_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/empty" />
-
-                <TextView
-                    android:id="@+id/score_empty_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center_vertical"
-                    android:text="@string/empty" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_score_empty4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/label_empty_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/empty" />
-
-                <TextView
-                    android:id="@+id/score_empty_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center_vertical"
-                    android:text="@string/empty" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_score_empty5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/label_empty_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/empty" />
-
-                <TextView
-                    android:id="@+id/score_empty_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center_vertical"
-                    android:text="@string/empty" />
-
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -509,10 +438,15 @@
             android:background="#ffffff"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                style="@style/gameScoreButtons"
+                android:id="@+id/gameDiceKeep1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dice Keep 1" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fourkind"
+                android:enabled="false"/>
         </LinearLayout>
 
         <LinearLayout
@@ -522,10 +456,15 @@
             android:background="#ffff00"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                style="@style/gameScoreButtons"
+                android:id="@+id/gameDiceKeep2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dice Keep 2" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fourkind"
+                android:enabled="false"/>
         </LinearLayout>
 
         <LinearLayout
@@ -535,10 +474,15 @@
             android:background="#ffaaff"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                style="@style/gameScoreButtons"
+                android:id="@+id/gameDiceKeep3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dice Keep 3" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fourkind"
+                android:enabled="false"/>
         </LinearLayout>
 
         <LinearLayout
@@ -548,10 +492,15 @@
             android:background="#ffffaa"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                style="@style/gameScoreButtons"
+                android:id="@+id/gameDiceKeep4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dice Keep 3" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fourkind"
+                android:enabled="false"/>
         </LinearLayout>
 
         <LinearLayout
@@ -561,10 +510,15 @@
             android:background="#aaaaff"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                style="@style/gameScoreButtons"
+                android:id="@+id/gameDiceKeep5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dice Keep 5" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fourkind"
+                android:enabled="false"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -585,10 +539,15 @@
             android:background="#aaaaff"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                style="@style/gameScoreButtons"
+                android:id="@+id/gameDiceRoll1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dice Roll 1" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fourkind"
+                android:enabled="false"/>
         </LinearLayout>
 
         <LinearLayout
@@ -598,10 +557,15 @@
             android:background="#ffffaa"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                style="@style/gameScoreButtons"
+                android:id="@+id/gameDiceRoll2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dice Roll 2" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fourkind"
+                android:enabled="false"/>
         </LinearLayout>
 
         <LinearLayout
@@ -611,10 +575,15 @@
             android:background="#aaffaa"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                style="@style/gameScoreButtons"
+                android:id="@+id/gameDiceRoll3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dice Roll 3" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fourkind"
+                android:enabled="false"/>
         </LinearLayout>
 
         <LinearLayout
@@ -624,10 +593,15 @@
             android:background="#ffff00"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                style="@style/gameScoreButtons"
+                android:id="@+id/gameDiceRoll4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dice Roll 4" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fourkind"
+                android:enabled="false"/>
         </LinearLayout>
 
         <LinearLayout
@@ -637,10 +611,15 @@
             android:background="#ffffff"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
+                style="@style/gameScoreButtons"
+                android:id="@+id/gameDiceRoll5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dice Roll 5" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fourkind"
+                android:enabled="false"/>
         </LinearLayout>
 
     </LinearLayout>

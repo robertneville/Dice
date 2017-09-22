@@ -11,4 +11,12 @@
         <item name="android:shadowDy">20</item>
     </style>
 
+    <!--Game Buttons For Score-->
+    <style name="gameScoreButtons">
+        <item name="android:textColor">@color/game_button_text</item>
+        <item name="android:background">@drawable/button_game</item>
+        <item name="android:paddingLeft">15sp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
 </resources>
