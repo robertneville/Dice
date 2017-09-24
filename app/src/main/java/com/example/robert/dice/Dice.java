@@ -8,11 +8,12 @@ import java.util.Random;
 
 public class Dice {
     Random random = new Random();
-    int mRolls=0;
     int mFace;
+    boolean mCanRoll = true;
 
     public Dice () {
-        mRolls = 3;
+        mCanRoll = true;
+        mFace = 0;
     }
 
     public int getDiceFace () {
@@ -21,6 +22,14 @@ public class Dice {
 
     public void setDiceFace(int face) {
         mFace = face;
+    }
+
+    public boolean getCanRoll() {
+        return mCanRoll;
+    }
+
+    public void setCanRoll(boolean canRoll) {
+        mCanRoll = canRoll;
     }
 
     public int rollDice() {
