@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class FragmentGame extends Fragment {
     //list of the buttons for scores and whether they have been used
     List<Button> ButtonScores = new ArrayList<>();
     List<Boolean> ButtonScoresFlag = new ArrayList<>();
+    List<TextView> TextScores = new ArrayList<>();
     //cup to roll
     ImageButton mCup;
     //lists to hold image buttons
@@ -396,11 +398,14 @@ public class FragmentGame extends Fragment {
     }
 
     /**
-     * This adds buttons to a list and bolleans to another list.
+     * This adds buttons to a list.
+     * Add score textViews to list.
+     * Add booleans to another list.
      * Booleans indicate if a Bbutton has been used.
      */
     private void AddScoresToList() {
         ButtonScores.clear();
+        //labels for scores
         ButtonScores.add(mOnesLabel);
         ButtonScores.add(mTwosLabel);
         ButtonScores.add(mThreesLabel);
@@ -414,6 +419,21 @@ public class FragmentGame extends Fragment {
         ButtonScores.add(mChanceLabel);
         ButtonScores.add(mFullHouiseLabel);
         ButtonScores.add(m5KindLabel);
+        //scores of the scores
+        TextScores.add(mOnes);
+        TextScores.add(mTwos);
+        TextScores.add(mThrees);
+        TextScores.add(mFours);
+        TextScores.add(mFives);
+        TextScores.add(mSixes);
+        TextScores.add(m3kind);
+        TextScores.add(m4kind);
+        TextScores.add(mSmStraight);
+        TextScores.add(mLgStraight);
+        TextScores.add(mChance);
+        TextScores.add(mFullHouise);
+        TextScores.add(m5Kind);
+        //boolen list to say if a score has been posted before.
         for(int i = 0; i <ButtonScores.size(); i++) {
             ButtonScoresFlag.add(false);
         }
@@ -445,16 +465,15 @@ public class FragmentGame extends Fragment {
     private void StartRoll() {
         Toast.makeText(getActivity(), 3 - mRollNumber + " rolls left.", Toast.LENGTH_LONG).show();
         mRollNumber++;
-
         for(int i = 0; i < rollDice.size();i++) {
             if (rollDice.get(i).getCanRoll()==true) {
                 rollDice.get(i).setDiceFace(rollDice.get(i).rollDice());
                 rollDiceImageButtons.get(i).setVisibility(View.VISIBLE);
                 rollDiceImageButtons.get(i).setEnabled(true);
                 SetImageButton(rollDiceImageButtons.get(i), keepDiceImageButtons.get(i), rollDice.get(i));
-                EnableScoreButtons();
+
             }
-        }
+        }EnableScoreButtons();
 
     }
 
@@ -498,11 +517,145 @@ public class FragmentGame extends Fragment {
      * enables the buttons to add a score based on dice face values
      */
     private void EnableScoreButtons() {
+        int score = 0;
         for(int i = 0; i < ButtonScores.size(); i++) {
             if(ButtonScoresFlag.get(i)==false) {
                 ButtonScores.get(i).setEnabled(true);
+                score = GetScore(i, rollDice);
+                TextScores.get(i).setText(score+"");
             }
         }
+    }
+
+    private int GetScore(int i, List<Dice> rollDice) {
+        int score=0;
+        int[] array = new int[5];
+        Arrays.sort(array);
+        for(int k = 0; k < 5; k++) {
+            array[k] = rollDice.get(k).getDiceFace();
+        }
+        switch(i) {
+            case 0:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(array[j]==1) {
+                        score++;
+                    }
+                }
+                break;
+            case 1:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(array[j]==2) {
+                        score++;
+                    }
+                }
+                score=score*2;
+                break;
+            case 2:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(array[j]==3) {
+                        score++;
+                    }
+                }
+                score=score*3;
+                break;
+            case 3:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(array[j]==4) {
+                        score++;
+                    }
+                }
+                score=score*4;
+                break;
+            case 4:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(array[j]==5) {
+                        score++;
+                    }
+                }
+                score=score*5;
+                break;
+            case 5:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(array[j]==6) {
+                        score++;
+                    }
+                }
+                score=score*6;
+                break;
+            case 6:
+                score = 0;
+                for(int index = 0; index < 5; index++) {
+                    int j = i + 1;
+                    if(j==5) {
+                        break;
+                    }
+                    else if(j)
+                }
+                score=score*6;
+                break;
+            case 7:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(rollDice.get(j).getDiceFace()==6) {
+                        score++;
+                    }
+                }
+                score=score*6;
+                break;
+            case 8:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(rollDice.get(j).getDiceFace()==6) {
+                        score++;
+                    }
+                }
+                score=score*6;
+                break;
+            case 9:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(rollDice.get(j).getDiceFace()==6) {
+                        score++;
+                    }
+                }
+                score=score*6;
+                break;
+            case 10:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(rollDice.get(j).getDiceFace()==6) {
+                        score++;
+                    }
+                }
+                score=score*6;
+                break;
+            case 11:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(rollDice.get(j).getDiceFace()==6) {
+                        score++;
+                    }
+                }
+                score=score*6;
+                break;
+            case 12:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(rollDice.get(j).getDiceFace()==6) {
+                        score++;
+                    }
+                }
+                score=score*6;
+                break;
+
+        }
+        return score;
     }
 
     /**
@@ -518,6 +671,7 @@ public class FragmentGame extends Fragment {
         for(int i = 0; i < ButtonScores.size(); i++) {
             ButtonScores.get(i).setEnabled(false);
         }
+        mRollNumber=1;
     }
 
 
