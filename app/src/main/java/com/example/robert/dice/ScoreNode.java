@@ -69,7 +69,7 @@ class ScoreNode {
         mLabel = label;
     }
 
-    public void SetScoreNode(ScoreNode next) {
+    public void SetNext(ScoreNode next) {
         mNext=next;
     }
 

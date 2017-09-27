@@ -22,8 +22,25 @@
     <string name="fullhouse">Full House</string>
     <string name="chance">Chance</string>
     <string name="fivekind">5 of a kind</string>
-    <string name="start">0</string>
+    <!--Strings for labels in the fragment_game.xml-->
+    <string-array name="game_labels">
+        <item>Score</item>
+        <item>Ones</item>
+        <item>Twos</item>
+        <item>Threes</item>
+        <item>Fours</item>
+        <item>Fives</item>
+        <item>Sixes</item>
+        <item>Bonus</item>
+        <item>3 of a kind</item>
+        <item>4 of a kind</item>
+        <item>Small straight</item>
+        <item>Large straight</item>
+        <item>Full House</item>
+        <item>Chance</item>
+        <item>5 of a kind</item>
+    </string-array>
     <string name="empty"> </string>
-
+    <string name="start">0</string>
 
 </resources>

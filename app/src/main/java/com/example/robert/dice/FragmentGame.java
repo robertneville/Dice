@@ -1,6 +1,7 @@
 package com.example.robert.dice;
 
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import java.util.List;
 
 
 public class FragmentGame extends Fragment {
+    ScoreLinkedList scoreList;
     int mRollNumber = 1;
     //the scores
     TextView mOnes, mTwos, mThrees, mFours, mFives, mSixes, m3kind, m4kind, mSmStraight, mLgStraight,
@@ -62,10 +64,22 @@ public class FragmentGame extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_game, container, false);
+        scoreList = new ScoreLinkedList();
+        makeList();
         InstantiateWidgets(view);
         AddDiceToLists();
         AddScoresToList();
         return view;
+    }
+
+    public void makeList() {
+        Resources res = getActivity().getResources();
+        String[] array = res.getStringArray(R.array.game_labels);
+        for (int i = 0; i<array.length;i++) {
+            ScoreNode temp = new ScoreNode(i, array[i], 0, false);
+            scoreList.addScoreNode(temp);
+        }
+        scoreList.PrintList(scoreList.mHead);
     }
 
     /**
