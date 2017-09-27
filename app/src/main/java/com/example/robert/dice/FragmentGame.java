@@ -588,14 +588,14 @@ public class FragmentGame extends Fragment {
                 }
                 score=score*6;
                 break;
-            case 6:
+            /*case 6:
                 score = 0;
                 for(int index = 0; index < 5; index++) {
                     int j = i + 1;
                     if(j==5) {
                         break;
                     }
-                    else if(j)
+                    //else if(j)
                 }
                 score=score*6;
                 break;
@@ -652,7 +652,7 @@ public class FragmentGame extends Fragment {
                     }
                 }
                 score=score*6;
-                break;
+                break;*/
 
         }
         return score;
