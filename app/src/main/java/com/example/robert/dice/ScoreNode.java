@@ -1,22 +1,28 @@
 package com.example.robert.dice;
 
 /**
- * Created by Robert on 28/09/2017.
+ * This is a node that will the name of the node, its index, its score and whether is has a score
+ * added to it by the user.
+ * Created by Robert Neville on 28/09/2017.
  */
 
-public class ScoreNode {
+class ScoreNode {
 
-    int mIndex;
-    String mLabel;
-    int mScore;
-    boolean mScoredYet;
+    private int mIndex;
+    private String mLabel;
+    private ScoreNode mNext;
+    private int mScore;
+    private boolean mScoredYet;
 
+    /**
+     * Empty constructor
+     */
     public ScoreNode() {
 
     }
 
     /**
-     * 
+     * Creates a new node. mNext will be null so we dont need it as argument.
      * @param index index of node in list
      * @param label name of node.
      * @param score score of node. Starts as 0;
@@ -25,6 +31,7 @@ public class ScoreNode {
     public ScoreNode(int index, String label, int score, boolean scoredYet) {
         mIndex = index;
         mLabel = label;
+        mNext = null;
         mScore = score;
         mScoredYet = scoredYet;
     }
@@ -38,6 +45,10 @@ public class ScoreNode {
 
     public String GetLabel() {
         return mLabel;
+    }
+
+    public ScoreNode GetNext() {
+        return mNext;
     }
 
     public int GetScore() {
@@ -56,6 +67,10 @@ public class ScoreNode {
 
     public void SetLabel(String label) {
         mLabel = label;
+    }
+
+    public void SetScoreNode(ScoreNode next) {
+        mNext=next;
     }
 
     public void SetScore(int score) {

@@ -5,4 +5,5 @@ package com.example.robert.dice;
  */
 
 public class ScorLinkedList {
+
 }
