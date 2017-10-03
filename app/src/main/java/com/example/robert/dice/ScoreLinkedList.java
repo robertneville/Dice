@@ -20,12 +20,16 @@ class ScoreLinkedList {
     public void addScoreNode(ScoreNode node) {
         if(mHead==null) {
             mHead=node;
+            mHead.SetPrev(null);
             mTail=node;
-            mLength++;
+
         }
+
         else {
             mTail.SetNext(node);
+            node.SetPrev(mTail);
             mTail=node;
+            mLength++;
         }
     }
 

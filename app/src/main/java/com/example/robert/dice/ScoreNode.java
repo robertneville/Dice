@@ -1,5 +1,8 @@
 package com.example.robert.dice;
 
+import android.widget.Button;
+import android.widget.TextView;
+
 /**
  * This is a node that will the name of the node, its index, its score and whether is has a score
  * added to it by the user.
@@ -11,8 +14,11 @@ class ScoreNode {
     private int mIndex;
     private String mLabel;
     private ScoreNode mNext;
+    private ScoreNode mPrev;
     private int mScore;
     private boolean mScoredYet;
+    private Button mScoreLabel;
+    private TextView mScoreText;
 
     /**
      * Empty constructor
@@ -51,12 +57,24 @@ class ScoreNode {
         return mNext;
     }
 
+    public ScoreNode GetPrev() {
+        return mPrev;
+    }
+
     public int GetScore() {
         return mScore;
     }
 
     public boolean GetScoredYet() {
         return mScoredYet;
+    }
+
+    public Button GetButtonLabel() {
+        return mScoreLabel;
+    }
+
+    public TextView GetScoreText() {
+        return mScoreText;
     }
     /**************************************
      * SETTERS
@@ -73,11 +91,23 @@ class ScoreNode {
         mNext=next;
     }
 
+    public void SetPrev(ScoreNode prev) {
+        mPrev = prev;
+    }
+
     public void SetScore(int score) {
         mScore = score;
     }
 
     public void SetScoredYet(boolean scoredYet) {
         mScoredYet = scoredYet;
+    }
+
+    public void SetScoreButton(Button scoreLabel) {
+        mScoreLabel = scoreLabel;
+    }
+
+    public void SetScoreText(TextView scoreText) {
+        mScoreText = scoreText;
     }
 }
