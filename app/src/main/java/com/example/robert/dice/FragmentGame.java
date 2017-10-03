@@ -106,9 +106,9 @@ public class FragmentGame extends Fragment {
         temp = temp.GetNext();
         temp.SetScoreText((TextView) view.findViewById(R.id.score_score_5));
         temp = temp.GetNext();
-        //skipping the bonus score node
-        temp=temp.GetNext();
         temp.SetScoreText((TextView) view.findViewById(R.id.score_score_6));
+        //skipping the bonus score node
+        temp = temp.GetNext();
         temp = temp.GetNext();
         temp.SetScoreText((TextView) view.findViewById(R.id.score_score_3kind));
         temp = temp.GetNext();
@@ -124,8 +124,8 @@ public class FragmentGame extends Fragment {
         temp = temp.GetNext();
         temp.SetScoreText((TextView) view.findViewById(R.id.score_score_5kind));
         //go back to start of list and set the scoreList head as temp head.
-        while(temp.GetPrev()!=null) {
-            temp=temp.GetPrev();
+        while (temp.GetPrev() != null) {
+            temp = temp.GetPrev();
         }
         scoreList.mHead = temp;
     }
@@ -144,62 +144,62 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Ones Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice, 0);
+                SetScore(rollDice, 1);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_2));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Twos Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice, 1);
+                SetScore(rollDice, 2);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_3));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Threes Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice, 2);
+                SetScore(rollDice, 3);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_4));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Fours Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice, 3);
+                SetScore(rollDice, 4);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_5));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Fives Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice, 4);
+                SetScore(rollDice, 5);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_6));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Sixes Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice, 5);
+                SetScore(rollDice, 6);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
         //skipping the bonus score node
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_3kind));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
@@ -209,7 +209,7 @@ public class FragmentGame extends Fragment {
                 SetScore(rollDice, 6);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_4kind));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
@@ -219,7 +219,7 @@ public class FragmentGame extends Fragment {
                 SetScore(rollDice, 7);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_smstraight));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
@@ -229,7 +229,7 @@ public class FragmentGame extends Fragment {
                 SetScore(rollDice, 8);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_lgstraight));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
@@ -239,7 +239,7 @@ public class FragmentGame extends Fragment {
                 SetScore(rollDice, 9);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_fullhouse));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
@@ -249,7 +249,7 @@ public class FragmentGame extends Fragment {
                 SetScore(rollDice, 10);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_chance));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
@@ -259,7 +259,7 @@ public class FragmentGame extends Fragment {
                 SetScore(rollDice, 11);
             }
         });
-        temp=temp.GetNext();
+        temp = temp.GetNext();
 
         temp.SetScoreButton((Button) view.findViewById(R.id.label_score_5kind));
         temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
@@ -269,7 +269,10 @@ public class FragmentGame extends Fragment {
                 SetScore(rollDice, 12);
             }
         });
-        scoreList.mHead=temp;
+        while (temp.GetPrev() != null) {
+            temp = temp.GetPrev();
+        }
+        scoreList.mHead = temp;
     }
 
     /**
@@ -457,49 +460,6 @@ public class FragmentGame extends Fragment {
     }
 
     /**
-     * This adds buttons to a list.
-     * Add score textViews to list.
-     * Add booleans to another list.
-     * Booleans indicate if a Bbutton has been used.
-     */
-   /* private void AddScoresToList() {
-        ButtonScores.clear();
-        //labels for scores
-        ButtonScores.add(mOnesLabel);
-        ButtonScores.add(mTwosLabel);
-        ButtonScores.add(mThreesLabel);
-        ButtonScores.add(mFoursLabel);
-        ButtonScores.add(mFivesLabel);
-        ButtonScores.add(mSixesLabel);
-        ButtonScores.add(m3kindLabel);
-        ButtonScores.add(m4kindLabel);
-        ButtonScores.add(mSmStraightLabel);
-        ButtonScores.add(mLgStraighLabel);
-        ButtonScores.add(mChanceLabel);
-        ButtonScores.add(mFullHouiseLabel);
-        ButtonScores.add(m5KindLabel);
-        //scores of the scores
-        TextScores.add(mOnes);
-        TextScores.add(mTwos);
-        TextScores.add(mThrees);
-        TextScores.add(mFours);
-        TextScores.add(mFives);
-        TextScores.add(mSixes);
-        TextScores.add(m3kind);
-        TextScores.add(m4kind);
-        TextScores.add(mSmStraight);
-        TextScores.add(mLgStraight);
-        TextScores.add(mChance);
-        TextScores.add(mFullHouise);
-        TextScores.add(m5Kind);
-        //boolen list to say if a score has been posted before.
-        for(int i = 0; i <ButtonScores.size(); i++) {
-            ButtonScoresFlag.add(false);
-        }
-
-    }*/
-
-    /**
      * This checks to see how many rolls have been used and uses the appropiate
      * method depending on the number of rolls. 1 - 3 rolls, continue with turn
      * more than 3 rolls. Must accept a score.
@@ -581,12 +541,20 @@ public class FragmentGame extends Fragment {
         int score = 0;
         ScoreNode temp = scoreList.mHead;
         while (temp.GetNext() != null) {
-            if (temp.GetScoredYet() == false) {
-                int index = temp.GetIndex();
-                temp.GetButtonLabel().setEnabled(true);
-                score = GetScore(index, rollDice);
-                temp.GetScoreText().setText(score + "");
+            //skip scores and bonus score node
+            if (temp.GetIndex() != 0 && temp.GetIndex() != 7) {
+                if (temp.GetScoredYet() == false) {
+                    int index = temp.GetIndex();
+                    temp.GetButtonLabel().setEnabled(true);
+                    score = GetScore(index, rollDice);
+                    temp.GetScoreText().setText(score + "");
+                    temp=temp.GetNext();
+                }
             }
+            else {
+                temp=temp.GetNext();
+            }
+
         }
 
     }
@@ -595,12 +563,12 @@ public class FragmentGame extends Fragment {
     private int GetScore(int i, List<Dice> rollDice) {
         int score = 0;
         int[] array = new int[5];
-        Arrays.sort(array);
         for (int k = 0; k < 5; k++) {
             array[k] = rollDice.get(k).getDiceFace();
         }
+        Arrays.sort(array);
         switch (i) {
-            case 0:
+            case 1:
                 score = 0;
                 for (int j = 0; j < 5; j++) {
                     if (array[j] == 1) {
@@ -608,7 +576,7 @@ public class FragmentGame extends Fragment {
                     }
                 }
                 break;
-            case 1:
+            case 2:
                 score = 0;
                 for (int j = 0; j < 5; j++) {
                     if (array[j] == 2) {
@@ -617,7 +585,7 @@ public class FragmentGame extends Fragment {
                 }
                 score = score * 2;
                 break;
-            case 2:
+            case 3:
                 score = 0;
                 for (int j = 0; j < 5; j++) {
                     if (array[j] == 3) {
@@ -626,7 +594,7 @@ public class FragmentGame extends Fragment {
                 }
                 score = score * 3;
                 break;
-            case 3:
+            case 4:
                 score = 0;
                 for (int j = 0; j < 5; j++) {
                     if (array[j] == 4) {
@@ -635,7 +603,7 @@ public class FragmentGame extends Fragment {
                 }
                 score = score * 4;
                 break;
-            case 4:
+            case 5:
                 score = 0;
                 for (int j = 0; j < 5; j++) {
                     if (array[j] == 5) {
@@ -644,7 +612,7 @@ public class FragmentGame extends Fragment {
                 }
                 score = score * 5;
                 break;
-            case 5:
+            case 6:
                 score = 0;
                 for (int j = 0; j < 5; j++) {
                     if (array[j] == 6) {
@@ -653,22 +621,12 @@ public class FragmentGame extends Fragment {
                 }
                 score = score * 6;
                 break;
-            /*case 6:
+            case 7:
                 score = 0;
                 for(int index = 0; index < 5; index++) {
                     int j = i + 1;
                     if(j==5) {
                         break;
-                    }
-                    //else if(j)
-                }
-                score=score*6;
-                break;
-            case 7:
-                score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(rollDice.get(j).getDiceFace()==6) {
-                        score++;
                     }
                 }
                 score=score*6;
@@ -717,7 +675,25 @@ public class FragmentGame extends Fragment {
                     }
                 }
                 score=score*6;
-                break;*/
+                break;
+            case 13:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(rollDice.get(j).getDiceFace()==6) {
+                        score++;
+                    }
+                }
+                score=score*6;
+                break;
+            case 14:
+                score = 0;
+                for(int j = 0; j<5; j++) {
+                    if(rollDice.get(j).getDiceFace()==6) {
+                        score++;
+                    }
+                }
+                score=score*6;
+                break;
 
         }
         return score;
