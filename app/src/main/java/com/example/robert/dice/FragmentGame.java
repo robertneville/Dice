@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -75,7 +74,7 @@ public class FragmentGame extends Fragment {
     public void makeList() {
         Resources res = getActivity().getResources();
         String[] array = res.getStringArray(R.array.game_labels);
-        for (int i = 0; i<array.length;i++) {
+        for (int i = 0; i < array.length; i++) {
             ScoreNode temp = new ScoreNode(i, array[i], 0, false);
             scoreList.addScoreNode(temp);
         }
@@ -132,7 +131,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Ones Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,0);
+                SetScore(0);
             }
         });
         mTwosLabel = (Button) view.findViewById(R.id.label_score_2);
@@ -140,7 +139,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Twos Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,1);
+                SetScore(1);
             }
         });
         mThreesLabel = (Button) view.findViewById(R.id.label_score_3);
@@ -148,7 +147,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Threes Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,2);
+                SetScore(2);
             }
         });
         mFoursLabel = (Button) view.findViewById(R.id.label_score_4);
@@ -156,7 +155,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Fours Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,3);
+                SetScore(3);
             }
         });
         mFivesLabel = (Button) view.findViewById(R.id.label_score_5);
@@ -164,7 +163,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Fives Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,4);
+                SetScore(4);
             }
         });
         mSixesLabel = (Button) view.findViewById(R.id.label_score_6);
@@ -172,7 +171,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Sixes Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,5);
+                SetScore(5);
             }
         });
         m3kindLabel = (Button) view.findViewById(R.id.label_score_3kind);
@@ -180,7 +179,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed 3 of Kind Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,6);
+                SetScore(6);
             }
         });
         m4kindLabel = (Button) view.findViewById(R.id.label_score_4kind);
@@ -188,7 +187,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed 4 of Kind Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,7);
+                SetScore(7);
             }
         });
         mSmStraightLabel = (Button) view.findViewById(R.id.label_score_smstraight);
@@ -196,7 +195,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Small Straight Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,8);
+                SetScore(8);
             }
         });
         mLgStraighLabel = (Button) view.findViewById(R.id.label_score_lgstraight);
@@ -204,7 +203,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Large Straight Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,9);
+                SetScore(9);
             }
         });
         mFullHouiseLabel = (Button) view.findViewById(R.id.label_score_fullhouse);
@@ -212,7 +211,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Full House Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,10);
+                SetScore(10);
             }
         });
         mChanceLabel = (Button) view.findViewById(R.id.label_score_chance);
@@ -220,7 +219,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Chance Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice,11);
+                SetScore(11);
             }
         });
         m5KindLabel = (Button) view.findViewById(R.id.label_score_5kind);
@@ -228,7 +227,7 @@ public class FragmentGame extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed 5 of Kind Label", Toast.LENGTH_SHORT).show();
-                SetScore(rollDice, 12);
+                SetScore(12);
             }
         });
     }
@@ -251,7 +250,8 @@ public class FragmentGame extends Fragment {
                 mDice1Roll.setVisibility(View.VISIBLE);
                 rollDice.get(0).setCanRoll(true);
                 mDice1Keep.setEnabled(false);
-                mDice1Keep.setVisibility(View.INVISIBLE);            }
+                mDice1Keep.setVisibility(View.INVISIBLE);
+            }
         });
         keepDiceImageButtons.add(mDice1Keep);
 
@@ -265,7 +265,8 @@ public class FragmentGame extends Fragment {
                 mDice2Roll.setVisibility(View.VISIBLE);
                 rollDice.get(1).setCanRoll(true);
                 mDice2Keep.setEnabled(false);
-                mDice2Keep.setVisibility(View.INVISIBLE);            }
+                mDice2Keep.setVisibility(View.INVISIBLE);
+            }
         });
         keepDiceImageButtons.add(mDice2Keep);
 
@@ -293,7 +294,8 @@ public class FragmentGame extends Fragment {
                 mDice4Roll.setVisibility(View.VISIBLE);
                 rollDice.get(3).setCanRoll(true);
                 mDice4Keep.setEnabled(false);
-                mDice4Keep.setVisibility(View.INVISIBLE);            }
+                mDice4Keep.setVisibility(View.INVISIBLE);
+            }
         });
         keepDiceImageButtons.add(mDice4Keep);
 
@@ -307,7 +309,8 @@ public class FragmentGame extends Fragment {
                 mDice5Roll.setVisibility(View.VISIBLE);
                 rollDice.get(4).setCanRoll(true);
                 mDice5Keep.setEnabled(false);
-                mDice5Keep.setVisibility(View.INVISIBLE);            }
+                mDice5Keep.setVisibility(View.INVISIBLE);
+            }
         });
         keepDiceImageButtons.add(mDice5Keep);
 
@@ -351,7 +354,8 @@ public class FragmentGame extends Fragment {
                 mDice3Roll.setVisibility(View.INVISIBLE);
                 rollDice.get(2).setCanRoll(false);
                 mDice3Keep.setEnabled(true);
-                mDice3Keep.setVisibility(View.VISIBLE);            }
+                mDice3Keep.setVisibility(View.VISIBLE);
+            }
         });
         rollDiceImageButtons.add(mDice3Roll);
 
@@ -365,7 +369,8 @@ public class FragmentGame extends Fragment {
                 mDice4Roll.setVisibility(View.INVISIBLE);
                 rollDice.get(3).setCanRoll(false);
                 mDice4Keep.setEnabled(true);
-                mDice4Keep.setVisibility(View.VISIBLE);            }
+                mDice4Keep.setVisibility(View.VISIBLE);
+            }
         });
         rollDiceImageButtons.add(mDice4Roll);
 
@@ -448,7 +453,7 @@ public class FragmentGame extends Fragment {
         TextScores.add(mFullHouise);
         TextScores.add(m5Kind);
         //boolen list to say if a score has been posted before.
-        for(int i = 0; i <ButtonScores.size(); i++) {
+        for (int i = 0; i < ButtonScores.size(); i++) {
             ButtonScoresFlag.add(false);
         }
 
@@ -471,34 +476,34 @@ public class FragmentGame extends Fragment {
 
     }
 
-    ;
-
     /**
      * This starts a roll
      */
     private void StartRoll() {
         Toast.makeText(getActivity(), 3 - mRollNumber + " rolls left.", Toast.LENGTH_LONG).show();
         mRollNumber++;
-        for(int i = 0; i < rollDice.size();i++) {
-            if (rollDice.get(i).getCanRoll()==true) {
+        for (int i = 0; i < rollDice.size(); i++) {
+            if (rollDice.get(i).getCanRoll()) {
                 rollDice.get(i).setDiceFace(rollDice.get(i).rollDice());
                 rollDiceImageButtons.get(i).setVisibility(View.VISIBLE);
                 rollDiceImageButtons.get(i).setEnabled(true);
                 SetImageButton(rollDiceImageButtons.get(i), keepDiceImageButtons.get(i), rollDice.get(i));
 
             }
-        }EnableScoreButtons();
+        }
+        EnableScoreButtons();
 
     }
 
     /**
      * This changes the image buttons src image based on the roll
+     *
      * @param rollDiceImage Image button for roll dice
      * @param keepDiceImage Image button for keep dice
-     * @param dice Dice that will have the randomly rolled value of 1 - 6
+     * @param dice          Dice that will have the randomly rolled value of 1 - 6
      */
-    private void SetImageButton(ImageButton rollDiceImage, ImageButton keepDiceImage,Dice dice) {
-        switch(dice.getDiceFace()) {
+    private void SetImageButton(ImageButton rollDiceImage, ImageButton keepDiceImage, Dice dice) {
+        switch (dice.getDiceFace()) {
             case 1:
                 rollDiceImage.setImageResource(R.mipmap.whitedice1);
                 keepDiceImage.setImageResource(R.mipmap.greendice1);
@@ -531,161 +536,333 @@ public class FragmentGame extends Fragment {
      * enables the buttons to add a score based on dice face values
      */
     private void EnableScoreButtons() {
-        int score = 0;
-        for(int i = 0; i < ButtonScores.size(); i++) {
-            if(ButtonScoresFlag.get(i)==false) {
+        int score;
+        for (int i = 0; i < ButtonScores.size(); i++) {
+            if (!ButtonScoresFlag.get(i)) {
                 ButtonScores.get(i).setEnabled(true);
                 score = GetScore(i, rollDice);
-                TextScores.get(i).setText(score+"");
+                TextScores.get(i).setText(score + "");
             }
         }
     }
 
     private int GetScore(int i, List<Dice> rollDice) {
-        int score=0;
+        ButtonScores.get(i).setBackgroundResource(R.drawable.game_button_pressed);
+        int score = 0;
         int[] array = new int[5];
-        Arrays.sort(array);
-        for(int k = 0; k < 5; k++) {
+        for (int k = 0; k < 5; k++) {
             array[k] = rollDice.get(k).getDiceFace();
         }
-        switch(i) {
+        Arrays.sort(array);
+        switch (i) {
             case 0:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(array[j]==1) {
+                for (int j = 0; j < 5; j++) {
+                    if (array[j] == 1) {
                         score++;
+                        ButtonScores.get(i).setBackgroundResource(R.drawable.available);
                     }
                 }
                 break;
             case 1:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(array[j]==2) {
+                for (int j = 0; j < 5; j++) {
+                    if (array[j] == 2) {
                         score++;
+                        ButtonScores.get(i).setBackgroundResource(R.drawable.available);
                     }
                 }
-                score=score*2;
+                score = score * 2;
                 break;
             case 2:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(array[j]==3) {
+                for (int j = 0; j < 5; j++) {
+                    if (array[j] == 3) {
                         score++;
+                        ButtonScores.get(i).setBackgroundResource(R.drawable.available);
                     }
                 }
-                score=score*3;
+                score = score * 3;
                 break;
             case 3:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(array[j]==4) {
+                for (int j = 0; j < 5; j++) {
+                    if (array[j] == 4) {
                         score++;
+                        ButtonScores.get(i).setBackgroundResource(R.drawable.available);
                     }
                 }
-                score=score*4;
+                score = score * 4;
                 break;
             case 4:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(array[j]==5) {
+                for (int j = 0; j < 5; j++) {
+                    if (array[j] == 5) {
                         score++;
+                        ButtonScores.get(i).setBackgroundResource(R.drawable.available);
                     }
                 }
-                score=score*5;
+                score = score * 5;
                 break;
             case 5:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(array[j]==6) {
+                for (int j = 0; j < 5; j++) {
+                    if (array[j] == 6) {
                         score++;
+                        ButtonScores.get(i).setBackgroundResource(R.drawable.available);
                     }
                 }
-                score=score*6;
+                score = score * 6;
                 break;
-            /*case 6:
+            case 6:
                 score = 0;
-                for(int index = 0; index < 5; index++) {
-                    int j = i + 1;
-                    if(j==5) {
-                        break;
+                int[] isThereThreeOfKind = {0, 0, 0, 0, 0,0};
+                for (int index = 0; index < 5; index++) {
+                    if (array[index] == 1) {
+                        isThereThreeOfKind[0]++;
+                    } else if (array[index] == 2) {
+                        isThereThreeOfKind[1]++;
+                    } else if (array[index] == 3) {
+                        isThereThreeOfKind[2]++;
+                    } else if (array[index] == 4) {
+                        isThereThreeOfKind[3]++;
+                    } else if (array[index] == 5) {
+                        isThereThreeOfKind[4]++;
+                    } else if (array[index] == 6) {
+                        isThereThreeOfKind[5]++;
                     }
-                    //else if(j)
                 }
-                score=score*6;
+                for (int anIsThereThreeOfKind : isThereThreeOfKind) {
+                    if (anIsThereThreeOfKind >= 3) {
+                        int oneScore = isThereThreeOfKind[0];
+                        int twoScore = isThereThreeOfKind[1] * 2;
+                        int threeScore = isThereThreeOfKind[2] * 3;
+                        int fourScore = isThereThreeOfKind[3] * 4;
+                        int fiveScore = isThereThreeOfKind[4] * 5;
+                        int sixScore = isThereThreeOfKind[5] * 6;
+                        score = oneScore + twoScore + threeScore + fourScore + fiveScore + sixScore;
+                        ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                    }
+                }
                 break;
+
             case 7:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(rollDice.get(j).getDiceFace()==6) {
-                        score++;
+                int[] isThereFourOfKind = {0, 0, 0, 0, 0,0};
+                for (int index = 0; index < 5; index++) {
+                    if (array[index] == 1) {
+                        isThereFourOfKind[0]++;
+                    } else if (array[index] == 2) {
+                        isThereFourOfKind[0]++;
+                    } else if (array[index] == 3) {
+                        isThereFourOfKind[0]++;
+                    } else if (array[index] == 4) {
+                        isThereFourOfKind[0]++;
+                    } else if (array[index] == 5) {
+                        isThereFourOfKind[0]++;
+                    } else if (array[index] == 6) {
+                        isThereFourOfKind[5]++;
                     }
                 }
-                score=score*6;
+                for (int anIsThereFourOfKind : isThereFourOfKind) {
+                    if (anIsThereFourOfKind >= 4) {
+                        int oneScore = isThereFourOfKind[0];
+                        int twoScore = isThereFourOfKind[1] * 2;
+                        int threeScore = isThereFourOfKind[2] * 3;
+                        int fourScore = isThereFourOfKind[3] * 4;
+                        int fiveScore = isThereFourOfKind[4] * 5;
+                        int sixScore = isThereFourOfKind[5] * 6;
+                        score = oneScore + twoScore + threeScore + fourScore + fiveScore + sixScore;
+                        ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                    }
+                }
                 break;
             case 8:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(rollDice.get(j).getDiceFace()==6) {
-                        score++;
+                if(array[0]==1) {
+                    if(array[1]==2){
+                        if(array[2]==3) {
+                            if(array[3]==4) {
+                                ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                                score=30;
+                            }
+                        }
                     }
                 }
-                score=score*6;
+                if(array[1]==1) {
+                    if(array[2]==2){
+                        if(array[3]==3) {
+                            if(array[4]==4) {
+                                ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                                score=30;
+                            }
+                        }
+                    }
+                }
+                score = 0;
+                if(array[0]==2) {
+                    if(array[1]==3){
+                        if(array[2]==4) {
+                            if(array[3]==5) {
+                                ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                                score=30;
+                            }
+                        }
+                    }
+                }
+                if(array[1]==2) {
+                    if(array[2]==3){
+                        if(array[3]==4) {
+                            if(array[4]==5) {
+                                ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                                score=30;
+                            }
+                        }
+                    }
+                }
+                score = 0;
+                if(array[0]==3) {
+                    if(array[1]==4){
+                        if(array[2]==5) {
+                            if(array[3]==6) {
+                                ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                                score=30;
+                            }
+                        }
+                    }
+                }
+                if(array[1]==3) {
+                    if(array[2]==4){
+                        if(array[3]==5) {
+                            if(array[4]==6) {
+                                ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                                score=30;
+                            }
+                        }
+                    }
+                }
                 break;
             case 9:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(rollDice.get(j).getDiceFace()==6) {
-                        score++;
+                if(array[0]==1) {
+                    if(array[1]==2){
+                        if(array[2]==3) {
+                            if(array[3]==4) {
+                                if(array[4]==5){
+                                    ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                                    score=40;
+                                }
+                            }
+                        }
                     }
                 }
-                score=score*6;
+                score = 0;
+                if(array[0]==2) {
+                    if(array[1]==3){
+                        if(array[2]==4) {
+                            if(array[3]==5) {
+                                if(array[4]==5){
+                                    ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                                    score=40;
+                                }
+                            }
+                        }
+                    }
+                }
                 break;
             case 10:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(rollDice.get(j).getDiceFace()==6) {
-                        score++;
+                int[] isThereFullHouse = {0, 0, 0, 0, 0,0};
+                for (int index = 0; index < 5; index++) {
+                    if (array[index] == 1) {
+                        isThereFullHouse[0]++;
+                    } else if (array[index] == 2) {
+                        isThereFullHouse[0]++;
+                    } else if (array[index] == 3) {
+                        isThereFullHouse[0]++;
+                    } else if (array[index] == 4) {
+                        isThereFullHouse[0]++;
+                    } else if (array[index] == 5) {
+                        isThereFullHouse[0]++;
+                    } else if (array[index] == 6) {
+                        isThereFullHouse[5]++;
                     }
                 }
-                score=score*6;
+                for (int anIsThereFullHouse : isThereFullHouse) {
+                    boolean pair = false;
+                    boolean triple = false;
+                    if (anIsThereFullHouse == 2) {
+                        pair = true;
+                    }
+                    if (anIsThereFullHouse == 3) {
+                        triple = true;
+                    }
+                    if (pair) {
+                        score = 25;
+                        ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                    }
+                }
                 break;
             case 11:
-                score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(rollDice.get(j).getDiceFace()==6) {
-                        score++;
-                    }
-                }
-                score=score*6;
+                score = array[0]+ array[1] + array[2] + array[3] + array[4];
+                ButtonScores.get(i).setBackgroundResource(R.drawable.available);
                 break;
             case 12:
                 score = 0;
-                for(int j = 0; j<5; j++) {
-                    if(rollDice.get(j).getDiceFace()==6) {
-                        score++;
+                int[] isThereFiveOfKind = {0, 0, 0, 0, 0,0};
+                for (int index = 0; index < 5; index++) {
+                    if (array[index] == 1) {
+                        isThereFiveOfKind[0]++;
+                    } else if (array[index] == 2) {
+                        isThereFiveOfKind[0]++;
+                    } else if (array[index] == 3) {
+                        isThereFiveOfKind[0]++;
+                    } else if (array[index] == 4) {
+                        isThereFiveOfKind[0]++;
+                    } else if (array[index] == 5) {
+                        isThereFiveOfKind[0]++;
+                    } else if (array[index] == 6) {
+                        isThereFiveOfKind[5]++;
                     }
                 }
-                score=score*6;
-                break;*/
-
+                for (int anIsThereFiveOfKind : isThereFiveOfKind) {
+                    if (anIsThereFiveOfKind >= 5) {
+                        score = 50;
+                        ButtonScores.get(i).setBackgroundResource(R.drawable.available);
+                    }
+                }
+                break;
         }
         return score;
     }
 
     /**
      * Sets a score, changes flag for that button and disables all score buttons
-     * @param rolledList    The list of dice and their values
-     * @param index         index of flag to be turned to true.
+     *
+     * @param index index of flag to be turned to true.
      */
-    private void SetScore(List<Dice> rolledList, int index) {
-        int one, two, three, four, five, six, kind3, kind4, kind5, smStr, lgStr, fh, chance =0;
-        
-
-        ButtonScoresFlag.add(index, true);
-        for(int i = 0; i < ButtonScores.size(); i++) {
+    private void SetScore(int index) {
+        int one, two, three, four, five, six, kind3, kind4, kind5, smStr, lgStr, fh, chance = 0;
+        ButtonScoresFlag.set(index, true);
+        for (int i = 0; i < ButtonScores.size(); i++) {
             ButtonScores.get(i).setEnabled(false);
+            if (!ButtonScoresFlag.get(i)) {
+                TextScores.get(i).setText(0 + "");
+                ButtonScores.get(i).setBackgroundResource(R.drawable.game_button_pressed);
+            } else {
+                ButtonScores.get(i).setBackgroundResource(R.drawable.scored);
+            }
         }
-        mRollNumber=1;
+        for (int j = 0; j < keepDiceImageButtons.size(); j++) {
+            keepDiceImageButtons.get(j).setEnabled(false);
+            keepDiceImageButtons.get(j).setVisibility(View.INVISIBLE);
+            keepDice.get(j).setCanRoll(false);
+            rollDiceImageButtons.get(j).setEnabled(false);
+            rollDiceImageButtons.get(j).setVisibility(View.INVISIBLE);
+            rollDice.get(j).setCanRoll(true);
+            AddDiceToLists();
+        }
+        mRollNumber = 1;
     }
 
 
