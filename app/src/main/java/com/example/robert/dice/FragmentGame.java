@@ -20,17 +20,7 @@ import java.util.List;
 public class FragmentGame extends Fragment {
     ScoreLinkedList scoreList;
     int mRollNumber = 1;
-    //the scores
-    TextView mOnes, mTwos, mThrees, mFours, mFives, mSixes, m3kind, m4kind, mSmStraight, mLgStraight,
-            mFullHouise, mChance, m5Kind;
 
-    //labels that you will be able to press to enter a score into the scores
-    Button mOnesLabel, mTwosLabel, mThreesLabel, mFoursLabel, mFivesLabel, mSixesLabel, m3kindLabel,
-            m4kindLabel, mSmStraightLabel, mLgStraighLabel, mFullHouiseLabel, mChanceLabel, m5KindLabel;
-    //list of the buttons for scores and whether they have been used
-    List<Button> ButtonScores = new ArrayList<>();
-    List<Boolean> ButtonScoresFlag = new ArrayList<>();
-    List<TextView> TextScores = new ArrayList<>();
     //cup to roll
     ImageButton mCup;
     //lists to hold image buttons
@@ -39,6 +29,10 @@ public class FragmentGame extends Fragment {
     //dice
     ImageButton mDice1Keep, mDice2Keep, mDice3Keep, mDice4Keep, mDice5Keep, mDice1Roll, mDice2Roll,
             mDice3Roll, mDice4Roll, mDice5Roll;
+    Button mOnesLabel,mTwosLabel,mThreesLabel,mFoursLabel,mFivesLabel,mSixesLabel,m3kindLabel,
+            m4kindLabel,mSmStraightLabel,mLgStraighLabel,mChanceLabel,mFullHouiseLabel,m5KindLabel;
+    TextView mOnes,mTwos,mThrees,mFours,mFives,mSixes,m3kind,m4kind,mSmStraight,mLgStraight,
+            mChance,mFullHouise,m5Kind;
 
     //dice lists to hold dice;
     List<Dice> keepDice = new ArrayList<>();
@@ -55,6 +49,9 @@ public class FragmentGame extends Fragment {
     Dice keepDice4 = new Dice();
     Dice keepDice5 = new Dice();
 
+    List<TextView> TextScores = new ArrayList<>();
+    List<Button> ButtonScores = new ArrayList<>();
+    List<Boolean> ButtonScoresFlag = new ArrayList<>();
     public FragmentGame() {
         // Required empty public constructor
     }
@@ -67,7 +64,7 @@ public class FragmentGame extends Fragment {
         makeList();
         InstantiateWidgets(view);
         AddDiceToLists();
-        AddScoresToList();
+        //AddScoresToList();
         return view;
     }
 
@@ -103,20 +100,40 @@ public class FragmentGame extends Fragment {
      * @param view The layout holding all these widgets.
      */
     private void InstantiateScores(View view) {
-        mOnes = (TextView) view.findViewById(R.id.score_score_1);
-        mTwos = (TextView) view.findViewById(R.id.score_score_2);
-        mThrees = (TextView) view.findViewById(R.id.score_score_3);
-        mFours = (TextView) view.findViewById(R.id.score_score_4);
-        mFives = (TextView) view.findViewById(R.id.score_score_5);
-        mSixes = (TextView) view.findViewById(R.id.score_score_6);
-        m3kind = (TextView) view.findViewById(R.id.score_score_3kind);
-        m4kind = (TextView) view.findViewById(R.id.score_score_4kind);
-        mSmStraight = (TextView) view.findViewById(R.id.score_score_smstraight);
-        mLgStraight = (TextView) view.findViewById(R.id.score_score_lgstraight);
-        mFullHouise = (TextView) view.findViewById(R.id.score_score_fullhuose);
-        mChance = (TextView) view.findViewById(R.id.score_score_chance);
-        m5Kind = (TextView) view.findViewById(R.id.score_score_5kind);
-
+        //skipping the total score node
+        ScoreNode temp = scoreList.mHead.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_1));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_2));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_3));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_4));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_5));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_6));
+        //skipping the bonus score node
+        temp = temp.GetNext();
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_3kind));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_4kind));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_smstraight));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_lgstraight));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_fullhuose));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_chance));
+        temp = temp.GetNext();
+        temp.SetScoreText((TextView) view.findViewById(R.id.score_score_5kind));
+        //go back to start of list and set the scoreList head as temp head.
+        while (temp.GetPrev() != null) {
+            temp = temp.GetPrev();
+        }
+        scoreList.mHead = temp;
     }
 
     /**
@@ -126,110 +143,142 @@ public class FragmentGame extends Fragment {
      * @param view The layout holding all these widgets.
      */
     private void InstantiateScoreLabels(View view) {
-        mOnesLabel = (Button) view.findViewById(R.id.label_score_1);
-        mOnesLabel.setOnClickListener(new View.OnClickListener() {
+        //skipping the total score node
+        ScoreNode temp = scoreList.mHead.GetNext();
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_1));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Ones Label", Toast.LENGTH_SHORT).show();
                 SetScore(0);
             }
         });
-        mTwosLabel = (Button) view.findViewById(R.id.label_score_2);
-        mTwosLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_2));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Twos Label", Toast.LENGTH_SHORT).show();
                 SetScore(1);
             }
         });
-        mThreesLabel = (Button) view.findViewById(R.id.label_score_3);
-        mThreesLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_3));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Threes Label", Toast.LENGTH_SHORT).show();
                 SetScore(2);
             }
         });
-        mFoursLabel = (Button) view.findViewById(R.id.label_score_4);
-        mFoursLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_4));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Fours Label", Toast.LENGTH_SHORT).show();
                 SetScore(3);
             }
         });
-        mFivesLabel = (Button) view.findViewById(R.id.label_score_5);
-        mFivesLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_5));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Fives Label", Toast.LENGTH_SHORT).show();
                 SetScore(4);
             }
         });
-        mSixesLabel = (Button) view.findViewById(R.id.label_score_6);
-        mSixesLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_6));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Sixes Label", Toast.LENGTH_SHORT).show();
                 SetScore(5);
             }
         });
-        m3kindLabel = (Button) view.findViewById(R.id.label_score_3kind);
-        m3kindLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+        //skipping the bonus score node
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_3kind));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed 3 of Kind Label", Toast.LENGTH_SHORT).show();
                 SetScore(6);
             }
         });
-        m4kindLabel = (Button) view.findViewById(R.id.label_score_4kind);
-        m4kindLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_4kind));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed 4 of Kind Label", Toast.LENGTH_SHORT).show();
                 SetScore(7);
             }
         });
-        mSmStraightLabel = (Button) view.findViewById(R.id.label_score_smstraight);
-        mSmStraightLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_smstraight));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Small Straight Label", Toast.LENGTH_SHORT).show();
                 SetScore(8);
             }
         });
-        mLgStraighLabel = (Button) view.findViewById(R.id.label_score_lgstraight);
-        mLgStraighLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_lgstraight));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Large Straight Label", Toast.LENGTH_SHORT).show();
                 SetScore(9);
             }
         });
-        mFullHouiseLabel = (Button) view.findViewById(R.id.label_score_fullhouse);
-        mFullHouiseLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_fullhouse));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Full House Label", Toast.LENGTH_SHORT).show();
                 SetScore(10);
             }
         });
-        mChanceLabel = (Button) view.findViewById(R.id.label_score_chance);
-        mChanceLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_chance));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed Chance Label", Toast.LENGTH_SHORT).show();
                 SetScore(11);
             }
         });
-        m5KindLabel = (Button) view.findViewById(R.id.label_score_5kind);
-        m5KindLabel.setOnClickListener(new View.OnClickListener() {
+        temp = temp.GetNext();
+
+        temp.SetScoreButton((Button) view.findViewById(R.id.label_score_5kind));
+        temp.GetButtonLabel().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Pressed 5 of Kind Label", Toast.LENGTH_SHORT).show();
                 SetScore(12);
             }
         });
+        while (temp.GetPrev() != null) {
+            temp = temp.GetPrev();
+        }
+        scoreList.mHead = temp;
     }
 
     /**
@@ -239,7 +288,6 @@ public class FragmentGame extends Fragment {
      * @param view The layout holding all these widgets.
      */
     private void InstantiateButtons(View view) {
-
         mDice1Keep = (ImageButton) view.findViewById(R.id.gameDiceKeep1);
         mDice1Keep.setVisibility(View.INVISIBLE);
         mDice1Keep.setEnabled(false);
@@ -488,7 +536,6 @@ public class FragmentGame extends Fragment {
                 rollDiceImageButtons.get(i).setVisibility(View.VISIBLE);
                 rollDiceImageButtons.get(i).setEnabled(true);
                 SetImageButton(rollDiceImageButtons.get(i), keepDiceImageButtons.get(i), rollDice.get(i));
-
             }
         }
         EnableScoreButtons();
@@ -536,15 +583,27 @@ public class FragmentGame extends Fragment {
      * enables the buttons to add a score based on dice face values
      */
     private void EnableScoreButtons() {
-        int score;
-        for (int i = 0; i < ButtonScores.size(); i++) {
-            if (!ButtonScoresFlag.get(i)) {
-                ButtonScores.get(i).setEnabled(true);
-                score = GetScore(i, rollDice);
-                TextScores.get(i).setText(score + "");
+        int score = 0;
+        ScoreNode temp = scoreList.mHead;
+        while (temp.GetNext() != null) {
+            //skip scores and bonus score node
+            if (temp.GetIndex() != 0 && temp.GetIndex() != 7) {
+                if (temp.GetScoredYet() == false) {
+                    int index = temp.GetIndex();
+                    temp.GetButtonLabel().setEnabled(true);
+                    score = GetScore(index, rollDice);
+                    temp.GetScoreText().setText(score + "");
+                    temp=temp.GetNext();
+                }
             }
+            else {
+                temp=temp.GetNext();
+            }
+
         }
+
     }
+
 
     private int GetScore(int i, List<Dice> rollDice) {
         ButtonScores.get(i).setBackgroundResource(R.drawable.game_button_pressed);
@@ -592,7 +651,8 @@ public class FragmentGame extends Fragment {
                         ButtonScores.get(i).setBackgroundResource(R.drawable.available);
                     }
                 }
-                score = score * 4;
+
+                score = score * 3;
                 break;
             case 4:
                 score = 0;
@@ -614,6 +674,7 @@ public class FragmentGame extends Fragment {
                 }
                 score = score * 6;
                 break;
+
             case 6:
                 score = 0;
                 int[] isThereThreeOfKind = {0, 0, 0, 0, 0,0};
@@ -645,7 +706,6 @@ public class FragmentGame extends Fragment {
                     }
                 }
                 break;
-
             case 7:
                 score = 0;
                 int[] isThereFourOfKind = {0, 0, 0, 0, 0,0};
@@ -756,12 +816,11 @@ public class FragmentGame extends Fragment {
                         }
                     }
                 }
-                score = 0;
                 if(array[0]==2) {
                     if(array[1]==3){
                         if(array[2]==4) {
                             if(array[3]==5) {
-                                if(array[4]==5){
+                                if(array[4]==6){
                                     ButtonScores.get(i).setBackgroundResource(R.drawable.available);
                                     score=40;
                                 }
@@ -770,7 +829,8 @@ public class FragmentGame extends Fragment {
                     }
                 }
                 break;
-            case 10:
+
+            case 11:
                 score = 0;
                 int[] isThereFullHouse = {0, 0, 0, 0, 0,0};
                 for (int index = 0; index < 5; index++) {
@@ -803,11 +863,12 @@ public class FragmentGame extends Fragment {
                     }
                 }
                 break;
-            case 11:
+            case 12:
                 score = array[0]+ array[1] + array[2] + array[3] + array[4];
                 ButtonScores.get(i).setBackgroundResource(R.drawable.available);
                 break;
-            case 12:
+
+            case 13:
                 score = 0;
                 int[] isThereFiveOfKind = {0, 0, 0, 0, 0,0};
                 for (int index = 0; index < 5; index++) {
@@ -838,7 +899,6 @@ public class FragmentGame extends Fragment {
 
     /**
      * Sets a score, changes flag for that button and disables all score buttons
-     *
      * @param index index of flag to be turned to true.
      */
     private void SetScore(int index) {
@@ -862,8 +922,5 @@ public class FragmentGame extends Fragment {
             rollDice.get(j).setCanRoll(true);
             AddDiceToLists();
         }
-        mRollNumber = 1;
     }
-
-
 }
